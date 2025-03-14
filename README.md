@@ -56,8 +56,7 @@ Ensure resumeAnalyzer.js is correctly passing the job_suggestions field to the f
 Ensure ScoreDisplay.jsx is rendering the job_suggestions data.
 
 
-real job suggestions, get the api or something form indeed.
+real job suggestions, get the api or something from indeed(found): pip install careerjet-api-client
 
 are these good enough for job postings across the entire world, what i want is whenever i give any location, it should get the available jobs from that location and the jobs we are suited for depending on the job description we give and the job role we are looking for
 
-pip install careerjet-api-client
