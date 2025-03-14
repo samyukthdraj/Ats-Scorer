@@ -1,0 +1,8 @@
+# server/python_scripts/requirements.txt
+pypdf
+python-docx
+nltk
+requests
+beautifulsoup4
+geopy
+careerjet-api-client

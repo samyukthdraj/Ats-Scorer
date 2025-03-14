@@ -1,0 +1,32 @@
+# Node.js
+/node_modules
+client/node_modules/
+server/node_modules/
+package-lock.json
+yarn.lock
+dist/
+build/
+logs/
+*.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp

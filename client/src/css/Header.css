@@ -1,0 +1,22 @@
+/* client/src/css/Header.css */
+.app-header {
+    background-color: #282c34; 
+    min-height: 70px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 10px;
+}
+
+.app-title {
+    margin: 0;
+    font-family: 'Doto', sans-serif !important; /* Try other fonts like 'Oswald', 'Roboto Slab', 'Montserrat' */
+    font-size: 2.0em; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
