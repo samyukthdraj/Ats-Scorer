@@ -43,6 +43,26 @@ Navigate to the root directory of your project
 Run the following command:
 Copydocker-compose up -d
 
+# Docker run
+- cd to root
+- build and start all containers: 
+docker-compose up --build
+<!--if you want to run containers in the background (detached mode) docker-compose up --build -d  -->
+- to verify everything is running properly: 
+docker-compose ps
+Your application should now be accessible at:
+
+Client: http://localhost:80 (or simply http://localhost)
+Server: http://localhost:5000
+MongoDB: accessible internally at mongodb://mongodb:27017
+
+- to stop containers:
+docker-compose down 
+- preserve the database data but remove everything else: 
+docker-compose down --volumes
+
+
+
 Access your application at http://localhost
 
 
@@ -56,7 +76,14 @@ Ensure resumeAnalyzer.js is correctly passing the job_suggestions field to the f
 Ensure ScoreDisplay.jsx is rendering the job_suggestions data.
 
 
-real job suggestions, get the api or something from indeed(found): pip install careerjet-api-client
+- real job suggestions, get the api or something from indeed(found): 
+pip install careerjet-api-client
 
 are these good enough for job postings across the entire world, what i want is whenever i give any location, it should get the available jobs from that location and the jobs we are suited for depending on the job description we give and the job role we are looking for
 
+
+
+- Future Scope:
+Keyword Extraction: Use NLP techniques to extract relevant keywords from the resume text and use them in your job search.
+Personalization: Match the job listings more closely to the user's experience level and specific skills.
+Caching: Implement caching for API results to reduce API calls and improve response times.

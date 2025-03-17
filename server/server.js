@@ -43,24 +43,28 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ats-track
     .catch(err => console.error('MongoDB connection error:', err));
 
  // Check if Python is installed and accessible
-    try {
-        const { execSync } = require('child_process');
-        const pythonVersion = execSync('python --version || python3 --version').toString();
-        console.log('Python version:', pythonVersion);
-    } catch (error) {
-        console.error('Python check failed:', error.message);
-        return res.status(500).json({ 
-            error: 'Python environment issue', 
-            details: 'Unable to execute Python. Please ensure Python is installed and accessible.' 
-        });
-    }
-
+ let pythonAvailable = false;
+ try {
+     const { execSync } = require('child_process');
+     const pythonVersion = execSync('python --version || python3 --version').toString();
+     console.log('Python version:', pythonVersion);
+     pythonAvailable = true;
+ } catch (error) {
+     console.error('Python check failed:', error.message);
+ }
+ 
 // API Routes
-// Update this part in server.js
 
 app.post('/api/analyze-resume', upload.single('resume'), async (req, res) => {
     try {
         console.log('Received request to analyze resume');
+
+        if (!pythonAvailable) {
+            return res.status(500).json({
+                error: 'Python environment issue',
+                details: 'Unable to execute Python. Please ensure Python is installed and accessible.'
+            });
+        }
         
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
